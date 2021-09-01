@@ -27,6 +27,21 @@ namespace OrientacaoObjetos {
 
                         Console.WriteLine();
                     }
+                    else if (aula == 45)
+                    {
+                        Console.Write("Qual exercício você quer executar? ");
+                        int exercicio = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+
+                        if (exercicio == 1)
+                            Secao04.aula45Exercicio01();
+                        else if (exercicio == 2)
+                            Secao04.aula45Exercicio02();
+                        else if (exercicio == 3)
+                            Secao04.aula45Exercicio03();
+
+                        Console.WriteLine();
+                    }
                     else
                     {
                         Console.Write("Aula inválida! ");

@@ -69,5 +69,66 @@ namespace OrientacaoObjetos {
 
             Console.WriteLine($"Salário médio: R$ {salarioMedio.ToString("F2", CultureInfo.InvariantCulture)}");
         }
+
+        public static void aula45Exercicio01()
+        {
+            Triangulo triangulo = new Triangulo();
+
+            Console.Write("Informe a largura do triângulo: ");
+            triangulo.Largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.Write("Informe a altura do triângulo: ");
+            triangulo.Altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine();
+
+            Console.WriteLine($"ÁREA: {triangulo.Area().ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"PERÍMETRO: {triangulo.Perimetro().ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"DIAGONAL: {triangulo.Diagonal().ToString("F2", CultureInfo.InvariantCulture)}");
+        }
+
+        public static void aula45Exercicio02()
+        {
+            Funcionario funcionario = new Funcionario();
+
+            Console.WriteLine("INFORME OS DADOS DO FUNCIONÁRIO");
+
+            Console.Write("Nome: ");
+            funcionario.Nome = Console.ReadLine();
+
+            Console.Write("Salário Bruto: ");
+            funcionario.Salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.Write("Imposto: ");
+            funcionario.Imposto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine();
+            Console.WriteLine("Funcionário: " + funcionario);
+
+            Console.WriteLine();
+            Console.Write("Digite a porcentagem para aumentar o salário: ");
+            funcionario.AumentarSalario(double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture));
+
+            Console.WriteLine();
+            Console.WriteLine("Dados Atualizados:" + funcionario);
+        }
+
+        public static void aula45Exercicio03()
+        {
+            Aluno aluno = new Aluno();
+
+            Console.WriteLine("INFORME OS DADOS DO FUNCIONÁRIO");
+
+            Console.Write("Nome do aluno: ");
+            aluno.Nome = Console.ReadLine();
+
+            Console.WriteLine("Digite as três notas do aluno:");
+            aluno.NotaPrimeiroTrimestre = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            aluno.NotaSegundoTrimestre = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            aluno.NotaTerceiroTrimestre = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine();
+            Console.WriteLine(aluno);
+        }
     }
 }
