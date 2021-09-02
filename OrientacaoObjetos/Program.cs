@@ -42,6 +42,14 @@ namespace OrientacaoObjetos {
 
                         Console.WriteLine();
                     }
+                    else if (aula == 48)
+                    {
+                        Console.WriteLine("Essa aula possui apenas um exercício...");
+                        Console.WriteLine();
+
+                        Secao04.aula48();
+                        Console.WriteLine();
+                    }
                     else
                     {
                         Console.Write("Aula inválida! ");
