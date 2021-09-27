@@ -99,9 +99,12 @@ namespace OrientacaoObjetos {
 
         public static void aula80()
         {
+            Console.Write("Informe um número que representará a quantidade de linhas e colunas da matriz: ");
             int n = int.Parse(Console.ReadLine());
 
             int[,] matriz = new int[n, n];
+
+            Console.WriteLine("Agora informe os valores de cada dimensão da matriz separados por espaço:");
 
             for (int i = 0; i < n; i++)
             {
@@ -137,6 +140,60 @@ namespace OrientacaoObjetos {
             }
 
             Console.Write("Números negativos: " + negativos);
+        }
+
+        public static void aula81()
+        {
+            Console.Write("Informe as dimensões X e Y da matriz separadas por espaço: ");
+            string[] valores = Console.ReadLine().Split(' ');
+            int x = int.Parse(valores[0]);
+            int y = int.Parse(valores[1]);
+
+            int[,] matriz = new int[x, y];
+
+            Console.WriteLine();
+            Console.WriteLine("Agora informe os valores de cada dimensão separados por espaço:");
+
+            for (int i = 0; i < x; i++)
+            {
+                string[] dados = Console.ReadLine().Split(' ');
+
+                for (int j = 0; j < y; j++)
+                {
+                    matriz[i, j] = int.Parse(dados[j]);
+                }
+            }
+
+            Console.WriteLine();
+            Console.Write("Informe um valor que deverá ser procurado na matriz: ");
+            int valor = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    if (matriz[i, j] == valor)
+                    {
+                        Console.WriteLine("Posição " + i + "," + j);
+
+                        if (j > 0) 
+                            Console.WriteLine("Esquerda: " + matriz[i,(j-1)]);
+                        
+                        if (i > 0)
+                            Console.WriteLine("Acima:    " + matriz[(i-1),j]);
+                        
+                        if (j < (matriz.GetLength(1) - 1))
+                            Console.WriteLine("Direita:  " + matriz[i,(j+1)]);
+                        
+                        if (i < (matriz.GetLength(0) - 1))
+                            Console.WriteLine("Abaixo:   " + matriz[(i+1),j]);
+
+                        Console.WriteLine();
+                    }
+                }
+            }
         }
     }
 }
